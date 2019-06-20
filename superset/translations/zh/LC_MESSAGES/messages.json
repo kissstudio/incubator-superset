@@ -3330,7 +3330,30 @@
       ],
       "Saved Queries": [
         "已保存查询"
-      ]
+      ],
+      "Line Chart": ["线形图"],
+      "Area Chart": ["面积图"],
+      "Bar Chart": ["柱状图"],
+      "Time-series Bar Chart": ["时间序列柱状图"],
+      "Time-series Table": ["时间序列表"],
+      "Dual Line Chart": ["双折线图"],
+      "Multiple Line Charts": ["多重线形图"],
+      "Sunburst Chart": ["旭日图"],
+      "Sankey Diagram": ["桑基图"],
+      "Nightingale Rose Chart": ["南丁格尔玫瑰图"],
+      "Time-series Percent Change": ["时间序列变化百分比图"],
+      "Partition Chart": ["分区图"],
+      "Event Flow": ["时间流程图"],
+      "Force-directed Graph": ["力导向图"],
+      "Paired t-test Table": ["配对t检验表"],
+      "deck.gl Polygon": ["地理位置可视化-多边形图"],
+      "deck.gl Scatterplot": ["地理位置可视化-散点图"],
+      "deck.gl 3D Hexagon": ["地理位置可视化-3D六边形图"],
+      "Time-series Period Pivot": ["时间序列周期轴图"],
+      "deck.gl Arc": ["地理位置可视化-拱形图"],
+      "deck.gl Grid": ["地理位置可视化-网格图"],
+      "deck.gl Screen Grid": ["地理位置可视化-电子屏栅图"],
+      "Horizon Chart": ["地平线图"]
     }
   }
 }

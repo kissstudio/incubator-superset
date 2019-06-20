@@ -5171,6 +5171,75 @@ msgstr "配置如何在这里显示您的覆盖。"
 msgid "Line Width"
 msgstr "线宽"
 
+msgid "Line Chart"
+msgstr "线形图"
+
+msgid "Area Chart"
+msgstr "面积图"
+
+msgid "Bar Chart"
+msgstr "柱状图"
+
+msgid "Time-series Bar Chart"
+msgstr "时间序列柱状图"
+
+msgid "Time-series Table"
+msgstr "时间序列表"
+
+msgid "Dual Line Chart"
+msgstr "双折线图"
+
+msgid "Multiple Line Charts"
+msgstr "多重线形图"
+
+msgid "Sunburst Chart"
+msgstr "旭日图"
+
+msgid "Sankey Diagram"
+msgstr "桑基图"
+
+msgid "Nightingale Rose Chart"
+msgstr "南丁格尔玫瑰图"
+
+msgid "Time-series Percent Change"
+msgstr "时间序列变化百分比图"
+
+msgid "Partition Chart"
+msgstr "分区图"
+
+msgid "Event Flow"
+msgstr "时间流程图"
+
+msgid "Force-directed Graph"
+msgstr "力导向图"
+
+msgid "Paired t-test Table"
+msgstr "配对t检验表"
+
+msgid "deck.gl Polygon"
+msgstr "地理位置可视化-多边形图"
+
+msgid "deck.gl Scatterplot"
+msgstr "地理位置可视化-散点图"
+
+msgid "deck.gl 3D Hexagon"
+msgstr "地理位置可视化-3D六边形图"
+
+msgid "Time-series Period Pivot"
+msgstr "时间序列周期轴图"
+
+msgid "deck.gl Arc"
+msgstr "地理位置可视化-拱形图"
+
+msgid "deck.gl Grid"
+msgstr "地理位置可视化-网格图"
+
+msgid "deck.gl Screen Grid"
+msgstr "地理位置可视化-电子屏栅图"
+
+msgid "Horizon Chart"
+msgstr "地平线图"
+
 
 #~ msgid "Please choose at least one \"Group by\" field"
 #~ msgstr "请至少选择一个“分组”字段"

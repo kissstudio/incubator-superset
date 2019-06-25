@@ -167,6 +167,35 @@ export const visTypes = {
       },
     },
   },
+  echarts_funnel: {
+    label: t('Funnel View'),
+    showOnExplore: true,
+    controlPanelSections: [{
+        label: t('Query'),
+        expanded: true,
+        controlSetRows: [['metrics'], ['adhoc_filters'], ['groupby'], ['limit'], ],
+    },
+    {
+        label: t('Chart Options'),
+        controlSetRows: [['color_scheme'], ],
+    },
+    ],
+},
+  echarts_map: {
+    label: t('echarts map'),
+    showOnExplore: true,
+    controlPanelSections: [{
+        label: t('Query'),
+        expanded: true,
+        controlSetRows: [['metrics'], ['adhoc_filters'], ['groupby'], ['limit'], ],
+    },
+    {
+        label: t('Chart Options'),
+        controlSetRows: [['color_scheme'], ],
+    },
+    ],
+},
+
 
   line: {
     label: t('Time Series - Line Chart'),
@@ -1922,3 +1951,4 @@ export function sectionsToRender(vizType, datasourceType) {
     viz.controlPanelSections,
   ).filter(section => section);
 }
+

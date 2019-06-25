@@ -50,6 +50,8 @@ export const VIZ_TYPES = {
   deck_arc: 'deck_arc',
   deck_polygon: 'deck_polygon',
   rose: 'rose',
+  echarts_funnel: 'echarts_funnel',
+  echarts_map: 'echarts_map',
 };
 
 const loadVis = promise =>
@@ -137,6 +139,8 @@ const vizMap = {
   [VIZ_TYPES.deck_multi]: () =>
     loadVis(import(/* webpackChunkName: "deckgl/multi" */ './deckgl/Multi/Multi.jsx')),
   [VIZ_TYPES.rose]: () => loadVis(import(/* webpackChunkName: "rose" */ './Rose/adaptor.jsx')),
+  [VIZ_TYPES.echarts_funnel]: () => loadVis(import(/* webpackChunkName: 'echarts_funnel' */ './echarts_funnel.js')),
+  [VIZ_TYPES.echarts_map]: () => loadVis(import(/* webpackChunkName: 'echarts_map' */ './echarts_map.js')),
 };
 
 export default vizMap;

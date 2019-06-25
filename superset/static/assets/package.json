@@ -129,7 +129,8 @@
     "supercluster": "^4.1.1",
     "underscore": "^1.8.3",
     "urijs": "^1.18.10",
-    "viewport-mercator-project": "^5.0.0"
+    "viewport-mercator-project": "^5.0.0",
+    "echarts": "^3.8.5"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
@@ -162,7 +163,7 @@
     "exports-loader": "^0.7.0",
     "fetch-mock": "^7.0.0-alpha.6",
     "file-loader": "^1.1.11",
-    "gl": "^4.0.4",
+    "fork-ts-checker-webpack-plugin": "^0.4.9",
     "ignore-styles": "^5.0.1",
     "imports-loader": "^0.7.1",
     "jest": "^23.6.0",

@@ -471,3 +471,73 @@ try:
             superset_config.__file__))
 except ImportError:
     pass
+
+# ******************************** my config ****************************************
+# =====================
+IS_DEV = True
+# =====================
+if IS_DEV:
+    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:123456@127.0.0.1/superset_0.28'
+else:
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:meb*2019@localhost/superset?charset=utf8'
+
+BABEL_DEFAULT_LOCALE = 'zh'
+LANGUAGES = {
+    'en': {'flag': 'us', 'name': 'English'},
+    'zh': {'flag': 'cn', 'name': 'Chinese'},
+}
+# ------------------------------------------------- Oauth --------------------------------------------------------
+from flask_appbuilder.const import AUTH_OAUTH
+from superset.security import SupersetSecurityManager
+class CustomSsoSecurityManager(SupersetSecurityManager):
+    def oauth_user_info(self, provider, response=None):
+        if provider == 'idp':
+            me = self.appbuilder.sm.oauth_remotes[provider].get('/connect/userinfo').data
+            return {'name': me['name'], 'email': me['email'], 'id': me['email'], 'username': me['email'],
+                    'first_name': '', 'last_name': ''}
+AUTH_USER_REGISTRATION_ROLE = "Public"
+CUSTOM_SECURITY_MANAGER = CustomSsoSecurityManager
+
+AUTH_USER_REGISTRATION = True
+if not IS_DEV:
+    AUTH_TYPE = AUTH_OAUTH
+OAUTH_PROVIDERS = [
+    { 'name':'idp',
+        'token_key':'access_token', # Name of the token in the response of access_token_url
+        'icon':'fa-address-card',   # Icon for the provider
+        'remote_app': {
+            'consumer_key':'06DBD4D9-50D8-4F55-A20C-29241C1072F',  # Client Id (Identify Superset application)
+            'consumer_secret':'87SfyB1ulX3Ynkby', # Secret for this Client Id (Identify Superset application)
+            'request_token_params':{
+                'scope': 'openid email profile'               # Scope for the Authorization
+            },
+            'access_token_method':'POST',    # HTTP Method to call access_token_url
+            'access_token_params':{        # Additional parameters for calls to access_token_url
+                'client_id':'06DBD4D9-50D8-4F55-A20C-29241C1072F'
+            },
+            'access_token_headers':{    # Additional headers for calls to access_token_url
+                'Authorization': 'Basic Base64EncodedClientIdAndSecret'
+            },
+            'base_url':'https://oauth.meb.com/',
+            'access_token_url':'https://oauth.meb.com/connect/token',
+            'authorize_url':'https://oauth.meb.com/connect/authorize'
+        }
+    }
+]
+# ------------------------------------------------- Oauth ------------------------------------------------------
+
+# =========================== redis cache ===================================
+CACHE_CONFIG = {
+    'CACHE_TYPE': 'redis',
+    'CACHE_DEFAULT_TIMEOUT': 60 * 60 * 24,  # 1 day default (in secs)
+    'CACHE_KEY_PREFIX': 'superset_results',
+    'CACHE_REDIS_URL': 'redis://localhost:6379/0',
+}
+
+# db timeout
+SUPERSET_WEBSERVER_TIMEOUT = 180
+
+CSV_EXPORT = {
+    'encoding': 'utf-8-sig',
+}
+# ENABLE_PROXY_FIX = True

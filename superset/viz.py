@@ -489,6 +489,40 @@ class BaseViz(object):
         return json.dumps(self.data)
 
 
+class EchartsFunnelViz(BaseViz):
+    """ Funnel Chart"""
+    viz_type = 'echarts_funnel'
+    is_timeseries = False
+
+    def get_data(self, df):
+        df = df.pivot_table(
+            index=self.groupby)
+        df = df.reset_index()
+        df.columns = ['name', 'value']
+        return df.to_dict(orient='records')
+
+
+class echartsMap(BaseViz):
+
+    """ echarts map viz """
+
+    viz_type = 'echarts_map' # 对应前端名字
+    verbose_name = _('echarts_map')
+    is_timeseries = False
+
+    def get_data(self, df):
+        form_data = self.form_data
+        df.sort_values(by=df.columns[0], inplace=True)
+        # print(df.values.tolist())
+        ori_data = df.values.tolist()
+        data = [{'name' : ori_data[i][0], 'value' : ori_data[i][1]} for i in range(len(ori_data))]
+        data_name = [ori_data[i][0] for i in range(len(ori_data))]
+        max_data = max([ori_data[i][1] for i in range(len(ori_data))])
+        min_data = min([ori_data[i][1] for i in range(len(ori_data))])
+       #这里回传了四个参数，分别是省份和对应数值、省份列表用来判断是否在可点击范围、最大和最小值用来限定颜色
+        return [data, data_name, max_data, min_data]
+
+
 class TableViz(BaseViz):
 
     """A basic html table that is sortable and searchable"""

@@ -479,7 +479,7 @@ IS_DEV = True
 if IS_DEV:
     SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:123456@127.0.0.1/superset_0.28'
 else:
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:meb*2019@localhost/superset?charset=utf8'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:meb*2019@localhost/superset_028?charset=utf8'
 
 BABEL_DEFAULT_LOCALE = 'zh'
 LANGUAGES = {

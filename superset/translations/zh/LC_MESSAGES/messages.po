@@ -5240,199 +5240,32 @@ msgstr "地理位置可视化-电子屏栅图"
 msgid "Horizon Chart"
 msgstr "地平线图"
 
+msgid "Funnel View"
+msgstr "漏斗图"
 
-#~ msgid "Please choose at least one \"Group by\" field"
-#~ msgstr "请至少选择一个“分组”字段"
+msgid "China map"
+msgstr "中国地图"
 
-#~ msgid "'Group By' and 'Columns' can't overlap"
-#~ msgstr "“分组”和“列”不能重叠"
+msgid "List Css Template"
+msgstr "Css模板列表"
 
-#~ msgid "Must have one numeric column specified"
-#~ msgstr "必须指定一个数字列"
+msgid "Add Css Template"
+msgstr "添加Css模板"
 
-#~ msgid "Could not connect to server"
-#~ msgstr "无法连接服务器"
+msgid "Force refresh"
+msgstr "强制刷新"
 
-#~ msgid ""
-#~ "%s is not right as a column name, please alias it (as in SELECT count(*))"
-#~ msgstr "%s 不适合作为列名，请对其进行别名（如 SELECT count(*)）"
+msgid "Edit chart metadata"
+msgstr "编辑图表"
 
-#~ msgid "Click the"
-#~ msgstr "点击"
+msgid "Edit dashboard"
+msgstr "编辑看板"
 
-#~ msgid "button on the top right to save your changes."
-#~ msgstr "请点击右上角的按钮，以保存您的更改。"
+msgid "Force refresh dashboard"
+msgstr "强制刷新看板"
 
-#~ msgid "Served from data cached %s, click to force refresh."
-#~ msgstr "来自数据缓存 %s，点击强制刷新。"
+msgid "Share dashboard"
+msgstr "分享看板"
 
-#~ msgid "Click to force refresh"
-#~ msgstr "点击强制刷新"
-
-#~ msgid "Sorry, there was an error adding slices to this dashboard: %s"
-#~ msgstr "对不起，在此仪表板中添加切片时出错：%s"
-
-#~ msgid "Edit this dashboard's properties"
-#~ msgstr "编辑这个仪表板的属性"
-
-#~ msgid "Add Slices"
-#~ msgstr "添加切片"
-
-#~ msgid "Add a new slice to the dashboard"
-#~ msgstr "向仪表板添加新的切片"
-
-#~ msgid "Add Slices to Dashboard"
-#~ msgstr "将切片添加到仪表板"
-
-#~ msgid "Edit slice properties"
-#~ msgstr "编辑切片属性"
-
-#~ msgid "Please enter a slice name"
-#~ msgstr "请输入切片名称"
-
-#~ msgid "Save A Slice"
-#~ msgstr "保存一个切片"
-
-#~ msgid "Overwrite slice %s"
-#~ msgstr "覆盖切片 %s"
-
-#~ msgid "[slice name]"
-#~ msgstr "[切片名称]"
-
-#~ msgid "Add slice to existing dashboard"
-#~ msgstr "将切片添加到现有仪表板"
-
-#~ msgid "Check out this slice: %s"
-#~ msgstr "查看切片：%s"
-
-#~ msgid "Select %s"
-#~ msgstr "选择 %s"
-
-#~ msgid ""
-#~ "Perhaps your data has grown, your database is under unusual load, or you "
-#~ "are simply querying a data source that is to large to be processed within "
-#~ "the timeout range. If that is the case, we recommend that you summarize "
-#~ "your data further."
-#~ msgstr ""
-#~ "也许你的数据增长了，你的数据库处于非正常的负载下，或者你只是查询一个大的数"
-#~ "据源在超时范围内处理。如果是这种情况，我们建议您进一步探查您的数据特征。"
-
-#~ msgid "Annotation layers to overlay on the visualization"
-#~ msgstr "注释图层重叠在可视化上"
-
-#~ msgid "Select a annotation layer"
-#~ msgstr "选择一个注释图层"
-
-#~ msgid "Error while fetching annotation layers"
-#~ msgstr "获取注释图层时出错"
-
-#~ msgid "Choose the metric"
-#~ msgstr "选择一个指标"
-
-#~ msgid "X Scale Interval"
-#~ msgstr "X 比例间隔"
-
-#~ msgid "Y Scale Interval"
-#~ msgstr "Y 比例间隔"
-
-#~ msgid ""
-#~ "Whether to show extra controls or not. Extra controls include things like "
-#~ "making multiBar charts stacked or side by side."
-#~ msgstr "是否显示额外的控制。额外的控制包括，制作堆叠或并排的多条形图。"
-
-#~ msgid ""
-#~ "The time column for the visualization. Note that you can define arbitrary "
-#~ "expression that return a DATETIME column in the table or. Also note that "
-#~ "the filter below is applied against this column or expression"
-#~ msgstr ""
-#~ "可视化的时间列。请注意，您可以定义在表中返回 DATETIME 列的任意表达式。另请"
-#~ "注意，下面的过滤器应用于此列或表达式"
-
-#~ msgid "Limits the number of time series that get displayed"
-#~ msgstr "限制显示的时间序列的数量"
-
-#~ msgid "Range Filter"
-#~ msgstr "范围过滤"
-
-#~ msgid ""
-#~ "The server could not be reached. You may want to verify your connection "
-#~ "and try again."
-#~ msgstr "服务器不可达。您可能需要验证连接并重试。"
-
-#~ msgid "An unknown error occurred. (Status: %s )"
-#~ msgstr "出现未知错误。（状态：%s）"
-
-#~ msgid "No slices"
-#~ msgstr "没有切片"
-
-#~ msgid "Slices"
-#~ msgstr "切片"
-
-#~ msgid "No favorite slices yet, go click on stars!"
-#~ msgstr "暂无收藏的切片，去点击星星吧！"
-
-#~ msgid ""
-#~ "Whether the access to this metric is restricted to certain roles. Only "
-#~ "roles with the permission 'metric access on XXX (the name of this "
-#~ "metric)' are allowed to access this metric."
-#~ msgstr "是否访问受限。只有有权限的用户才能访问。"
-
-#~ msgid ""
-#~ "The list of slices associated with this table. By altering this "
-#~ "datasource, you may change how these associated slices behave. Also note "
-#~ "that slices need to point to a datasource, so this form will fail at "
-#~ "saving if removing slices from a datasource. If you want to change the "
-#~ "datasource for a slice, overwrite the slice from the 'explore view'"
-#~ msgstr ""
-#~ "与此表关联的切片列表。通过更改此数据源，您可以更改相关的切片。还要注意，切"
-#~ "片需要指向数据源，因此如果从数据源中删除切片，则此形式将无法保存。如果要更"
-#~ "改切片的数据源，请从`浏览视图`覆盖切片，"
-
-#~ msgid "Associated Slices"
-#~ msgstr "相关切片"
-
-#~ msgid "Import"
-#~ msgstr "导入"
-
-#~ msgid "Welcome!"
-#~ msgstr "欢迎！"
-
-#~ msgid ""
-#~ "All the queries in Sql Lab are going to be executed on behalf of "
-#~ "currently authorized user."
-#~ msgstr "SQL Lab 中所有的查询都将被当前授权用户执行。"
-
-#~ msgid "Impersonate queries to the database"
-#~ msgstr "模拟对数据库的查询"
-
-#~ msgid "List Slices"
-#~ msgstr "切片列表"
-
-#~ msgid "Show Slice"
-#~ msgstr "显示切片"
-
-#~ msgid "Add Slice"
-#~ msgstr "添加切片"
-
-#~ msgid "Edit Slice"
-#~ msgstr "编辑切片"
-
-#~ msgid "Duration (in seconds) of the caching timeout for this slice."
-#~ msgstr "切片数据过期时间（秒）"
-
-#~ msgid "Slice"
-#~ msgstr "切片"
-
-#~ msgid ""
-#~ "This json object describes the positioning of the widgets in the "
-#~ "dashboard. It is dynamically generated when adjusting the widgets size "
-#~ "and positions by using drag & drop in the dashboard view."
-#~ msgstr ""
-#~ "这个 JSON 对象描述了部件在看板中的位置。它是动态生成的，可以通过拖放，在看"
-#~ "板中调整整部件的大小和位置。"
-
-#~ msgid "Slice %(id)s not found"
-#~ msgstr "切片 %(id)s 没有找到"
-
-#~ msgid "Cannot find User %(name)s, please ask your admin to create one."
-#~ msgstr "找不到用户 %(name)s，请您让管理员创建一个。"
+msgid "Share chart"
+msgstr "分享图表"

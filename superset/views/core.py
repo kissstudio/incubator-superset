@@ -453,8 +453,7 @@ class SliceModelView(SupersetModelView, DeleteMixin):  # noqa
     base_order = ('changed_on', 'desc')
     description_columns = {
         'description': Markup(
-            'The content here can be displayed as widget headers in the '
-            'dashboard view. Supports '
+            '这里的内容可以在仪表板视图中显示为小部件标题,支持 '
             '<a href="https://daringfireball.net/projects/markdown/"">'
             'markdown</a>'),
         'params': _(
@@ -569,9 +568,7 @@ class DashboardModelView(SupersetModelView, DeleteMixin):  # noqa
             'the widgets size and positions by using drag & drop in '
             'the dashboard view'),
         'css': _(
-            'The css for individual dashboards can be altered here, or '
-            'in the dashboard view where changes are immediately '
-            'visible'),
+            '可以在这里或者在看板视图修改单个看板的CSS样式'),
         'slug': _('To get a readable URL for your dashboard'),
         'json_metadata': _(
             'This JSON object is generated dynamically when clicking '

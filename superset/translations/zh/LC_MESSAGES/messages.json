@@ -3353,7 +3353,17 @@
       "deck.gl Arc": ["地理位置可视化-拱形图"],
       "deck.gl Grid": ["地理位置可视化-网格图"],
       "deck.gl Screen Grid": ["地理位置可视化-电子屏栅图"],
-      "Horizon Chart": ["地平线图"]
+      "Horizon Chart": ["地平线图"],
+      "Funnel View": ["漏斗图"],
+      "China map": ["中国地图"],
+      "List Css Template": ["Css模板列表"],
+      "Add Css Template": ["添加Css模板"],
+      "Force refresh": ["强制刷新"],
+      "Edit chart metadata": ["编辑图表"],
+      "Edit dashboard": ["编辑看板"],
+      "Force refresh dashboard": ["强制刷新看板"],
+      "Share dashboard": ["分享看板"],
+      "Share chart": ["分享图表"]
     }
   }
 }

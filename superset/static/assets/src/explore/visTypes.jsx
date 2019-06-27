@@ -182,7 +182,7 @@ export const visTypes = {
     ],
 },
   echarts_map: {
-    label: t('echarts map'),
+    label: t('China map'),
     showOnExplore: true,
     controlPanelSections: [{
         label: t('Query'),

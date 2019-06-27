@@ -56,9 +56,9 @@ export default class AddSliceContainer extends React.PureComponent {
   render() {
     return (
       <div className="container">
-        <Panel header={<h3>{t('Create a new chart')}</h3>}>
+        <Panel header={<h3>{t('创建一个新图表')}</h3>}>
           <div>
-            <p>{t('Choose a datasource')}</p>
+            <p>{t('选择一个数据源')}</p>
             <div style={styleSelectWidth}>
               <Select
                 clearable={false}
@@ -66,29 +66,27 @@ export default class AddSliceContainer extends React.PureComponent {
                 name="select-datasource"
                 onChange={this.changeDatasource.bind(this)}
                 options={this.props.datasources}
-                placeholder={t('Choose a datasource')}
+                placeholder={t('选择一个数据源')}
                 value={this.state.datasourceValue}
                 width={200}
               />
             </div>
             <p className="text-muted">
               {t(
-                'If the datasource your are looking for is not ' +
-                'available in the list, ' +
-                'follow the instructions on the how to add it on the ')}
-              <a href="http://superset.apache.org/tutorial.html">{t('Superset tutorial')}</a>
+                '如果你的数据源不可用，请参考')}
+              <a href="http://superset.apache.org/tutorial.html">{t('Superset教程')}</a>
             </p>
           </div>
           <br />
           <div>
-            <p>{t('Choose a visualization type')}</p>
+            <p>{t('选择一个图表类型')}</p>
             <Select
               clearable={false}
               name="select-vis-type"
               style={styleSelectWidth}
               onChange={this.changeVisType.bind(this)}
               options={this.vizTypeOptions}
-              placeholder={t('Choose a visualization type')}
+              placeholder={t('选择一个图表类型')}
               value={this.state.visType}
             />
           </div>
@@ -98,7 +96,7 @@ export default class AddSliceContainer extends React.PureComponent {
             disabled={this.isBtnDisabled()}
             onClick={this.gotoSlice.bind(this)}
           >
-            {t('Create new chart')}
+            {t('创建新表')}
           </Button>
           <br /><br />
         </Panel>

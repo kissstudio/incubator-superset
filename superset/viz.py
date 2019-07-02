@@ -6,7 +6,7 @@ Superset can render.
 """
 from collections import defaultdict, OrderedDict
 import copy
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 from functools import reduce
 import hashlib
 import inspect
@@ -364,6 +364,12 @@ class BaseViz(object):
         payload = self.get_df_payload(query_obj)
 
         df = payload.get('df')
+        for index in df.index.tolist():
+            row_data = df.loc[index].to_dict()
+            for k, v in row_data.items():
+                if type(v) == date:
+                    df.loc[index, k] = str(v)
+
         if self.status != utils.QueryStatus.FAILED:
             if df is not None and df.empty:
                 payload['error'] = 'No data'

@@ -10,7 +10,7 @@ export const chart = {
   chartUpdateEndTime: null,
   chartUpdateStartTime: now(),
   latestQueryFormData: {},
-  queryRequest: null,
+  queryController: null,
   queryResponse: null,
   triggerQuery: true,
   lastRendered: 0,
@@ -37,13 +37,13 @@ export default function chartReducer(charts = {}, action) {
         chartAlert: null,
         chartUpdateEndTime: null,
         chartUpdateStartTime: now(),
-        queryRequest: action.queryRequest,
+        queryController: action.queryController,
       };
     },
     [actions.CHART_UPDATE_STOPPED](state) {
       return { ...state,
         chartStatus: 'stopped',
-        chartAlert: t('Updating chart was stopped'),
+        chartAlert: t('停止更新图表'),
       };
     },
     [actions.CHART_RENDERING_SUCCEEDED](state) {
@@ -61,8 +61,8 @@ export default function chartReducer(charts = {}, action) {
       return { ...state,
         chartStatus: 'failed',
         chartAlert: (
-          `${t('Query timeout')} - ` +
-          t(`visualization queries are set to timeout at ${action.timeout} seconds. `) +
+          `${t('查询超时')} - ` +
+          t(`可视化查询超时设置为 ${action.timeout} 秒. `) +
           t('Perhaps your data has grown, your database is under unusual load, ' +
             'or you are simply querying a data source that is too large ' +
             'to be processed within the timeout range. ' +

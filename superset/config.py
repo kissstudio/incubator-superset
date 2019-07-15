@@ -536,8 +536,25 @@ CACHE_CONFIG = {
 
 # db timeout
 SUPERSET_WEBSERVER_TIMEOUT = 180
+SUPERSET_WORKERS = 4
 
 CSV_EXPORT = {
     'encoding': 'utf-8-sig',
 }
 # ENABLE_PROXY_FIX = True
+
+class CeleryConfig(object):
+    BROKER_URL = 'redis://localhost:6379/0'
+    CELERY_IMPORTS = ('superset.sql_lab',)
+    CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+    CELERY_ANNOTATIONS = {'tasks.add': {'rate_limit': '10/s'}}
+    CELERYD_LOG_LEVEL = 'DEBUG'
+    CELERYD_PREFETCH_MULTIPLIER = 10
+    CELERY_ACKS_LATE = True
+
+CELERY_CONFIG = CeleryConfig
+
+from werkzeug.contrib.cache import RedisCache
+RESULTS_BACKEND = RedisCache(
+    host='localhost', port=6379,
+    key_prefix="superset_results")

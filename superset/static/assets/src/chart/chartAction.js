@@ -173,7 +173,7 @@ export function runQuery(formData, force = false, timeout = 60, key) {
         });
         if (err.statusText === 'timeout') {
           dispatch(chartUpdateTimeout(err.statusText, timeout, key));
-        } else if (err.statusText === 'AbortError') {
+        } else if (err.name === 'AbortError') {
           dispatch(chartUpdateStopped(key));
         } else {
           let errObject = err;

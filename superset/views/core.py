@@ -428,7 +428,7 @@ if config.get('ENABLE_ACCESS_REQUEST'):
         icon='fa-table')
 
 
-class SliceModelView(SupersetModelView, DeleteMixin):  # noqa
+class SliceModelView(SupersetModelView, DeleteMixin, SupersetFilter):  # noqa
     route_base = '/chart'
     datamodel = SQLAInterface(models.Slice)
 
@@ -495,11 +495,18 @@ class SliceModelView(SupersetModelView, DeleteMixin):  # noqa
     @expose('/add', methods=['GET', 'POST'])
     @has_access
     def add(self):
-        datasources = ConnectorRegistry.get_all_datasources(db.session)
-        datasources = [
-            {'value': str(d.id) + '__' + d.type, 'label': repr(d)}
-            for d in datasources
-        ]
+        datasource_perms = self.get_view_menus('datasource_access')
+        datasources = list()
+        while datasource_perms:
+            perm = datasource_perms.pop()
+            access_datasource_id = re.findall('\(id:(.*?)\)', perm)[0] + '__table'
+            access_datasource_name = re.findall('\]\.\[(.*?)\]\(id', perm)[0]
+            datasources.append({'value': access_datasource_id, 'label': access_datasource_name})
+        # datasources = ConnectorRegistry.get_all_datasources(db.session)
+        # datasources = [
+        #     {'value': str(d.id) + '__' + d.type, 'label': repr(d)}
+        #     for d in datasources
+        # ]
         return self.render_template(
             'superset/add_slice.html',
             bootstrap_data=json.dumps({

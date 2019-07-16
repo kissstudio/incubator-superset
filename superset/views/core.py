@@ -495,18 +495,21 @@ class SliceModelView(SupersetModelView, DeleteMixin, SupersetFilter):  # noqa
     @expose('/add', methods=['GET', 'POST'])
     @has_access
     def add(self):
-        datasource_perms = self.get_view_menus('datasource_access')
-        datasources = list()
-        while datasource_perms:
-            perm = datasource_perms.pop()
-            access_datasource_id = re.findall('\(id:(.*?)\)', perm)[0] + '__table'
-            access_datasource_name = re.findall('\]\.\[(.*?)\]\(id', perm)[0]
-            datasources.append({'value': access_datasource_id, 'label': access_datasource_name})
-        # datasources = ConnectorRegistry.get_all_datasources(db.session)
-        # datasources = [
-        #     {'value': str(d.id) + '__' + d.type, 'label': repr(d)}
-        #     for d in datasources
-        # ]
+        if security_manager.all_datasource_access():
+            datasources = ConnectorRegistry.get_all_datasources(db.session)
+            datasources = [
+                {'value': str(d.id) + '__' + d.type, 'label': repr(d)}
+                for d in datasources
+            ]
+        else:
+            datasource_perms = self.get_view_menus('datasource_access')
+            datasources = list()
+            while datasource_perms:
+                perm = datasource_perms.pop()
+                access_datasource_id = re.findall('\(id:(.*?)\)', perm)[0] + '__table'
+                access_datasource_name = re.findall('\]\.\[(.*?)\]\(id', perm)[0]
+                datasources.append({'value': access_datasource_id, 'label': access_datasource_name})
+
         return self.render_template(
             'superset/add_slice.html',
             bootstrap_data=json.dumps({

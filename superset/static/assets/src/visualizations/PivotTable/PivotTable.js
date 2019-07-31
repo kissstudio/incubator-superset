@@ -6,7 +6,6 @@ import { d3format, fixDataTableBodyHeight } from '../../modules/utils';
 import './PivotTable.css';
 
 dt(window, $);
-
 const propTypes = {
   data: PropTypes.shape({
     // TODO: replace this with raw data in SIP-6
@@ -44,6 +43,10 @@ function PivotTable(element, props) {
     ? columns.map(col => col[0])
     : columns;
 
+  const cols1 = Array.isArray(columns[0])
+    ? columns.map(col1 => col1[1])
+    : columns;
+
   // jQuery hack to set verbose names in headers
   const replaceCell = function () {
     const s = $(this)[0].textContent;
@@ -56,7 +59,8 @@ function PivotTable(element, props) {
   $container.find('tbody tr').each(function () {
     $(this).find('td').each(function (i) {
       const metric = cols[i];
-      const format = columnFormats[metric] || numberFormat || '.3s';
+      const metric1 = cols1[i];
+      const format = columnFormats[metric] || columnFormats[metric1] || numberFormat || '.3s';
       const tdText = $(this)[0].textContent;
       if (!Number.isNaN(tdText) && tdText !== '') {
         $(this)[0].textContent = d3format(format, tdText);

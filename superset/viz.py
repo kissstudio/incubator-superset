@@ -364,11 +364,12 @@ class BaseViz(object):
         payload = self.get_df_payload(query_obj)
 
         df = payload.get('df')
-        for index in df.index.tolist():
-            row_data = df.loc[index].to_dict()
-            for k, v in row_data.items():
-                if type(v) == date:
-                    df.loc[index, k] = str(v)
+        if df is not None:
+            for index in df.index.tolist():
+                row_data = df.loc[index].to_dict()
+                for k, v in row_data.items():
+                    if type(v) == date:
+                        df.loc[index, k] = str(v)
 
         if self.status != utils.QueryStatus.FAILED:
             if df is not None and df.empty:

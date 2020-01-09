@@ -720,6 +720,7 @@ class PivotTableViz(BaseViz):
             aggfunc=self.form_data.get('pandas_aggfunc'),
             margins=self.form_data.get('pivot_margins'),
         )
+        df = df[[self.get_metric_label(m) for m in self.form_data.get('metrics')]] # 根据指标顺序显示
         # Display metrics side by side with each column
         if self.form_data.get('combine_metric'):
             df = df.stack(0).unstack()
